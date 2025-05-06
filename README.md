@@ -199,11 +199,3 @@ staticfiles/
 **/migrations/*.py
 !**/migrations/__init__.py
 ```
-
-### Git Init & Commit
-
-```bash
-git init
-git add .
-git commit -m "Stage 1: Django backend setup with MySQL, media, and CORS"
-```
