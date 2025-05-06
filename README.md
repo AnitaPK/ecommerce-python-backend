@@ -64,7 +64,7 @@ django-cors-headers>=3.13
 
 ```bash
 django-admin startproject backend .
-cd backend
+#cd backend
 python manage.py startapp api
 ```
 
@@ -199,3 +199,37 @@ staticfiles/
 **/migrations/*.py
 !**/migrations/__init__.py
 ```
+
+
+
+---
+
+## ✅ Outcome of Stage 1
+
+- ✅ Just test your available URLs
+- ✅ Visit:
+- http://127.0.0.1:8000/admin/ → Django admin panel
+
+- http://127.0.0.1:8000/api/ → This will show something only if you define routes in api/urls.py
+
+- If you're just testing, it's totally fine to leave the root (/) path undefined.
+
+---
+
+
+## ✅ Add a welcome route (optional)
+- If you want to show a simple message at /, add this to your backend/urls.py:
+
+```bash
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to the Ecommerce API")
+
+urlpatterns = [
+    path('', home),  # 👈 Add this line
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
+]
+```
+
